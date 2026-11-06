@@ -31,4 +31,4 @@ Always consult official, current sources and obtain any required approvals befor
 
 ## License status
 
-No root `LICENSE` file is currently published for SkyForged. A source-available GitHub repository is not automatically open-source licensed. Choosing an explicit license is a maintainer decision; see [Roadmap](ROADMAP.md).
+The project's original source code and documentation are covered by the [MIT License](../LICENSE). This does **not** relicense third-party content. The provenance of some bundled artwork and component data remains unaudited; see [third-party notices](../THIRD_PARTY_NOTICES.md) and the [roadmap](ROADMAP.md).

@@ -2,7 +2,7 @@
 
 SkyForged is a browser-based engineering learning and planning workspace. Contributions that make tools more accurate, easier to test or easier to understand are welcome for maintainer review.
 
-> **License note:** This repository does not yet contain a top-level project license. Its public source is visible, but reuse and redistribution rights have not been specified. Before contributing substantial code or redistributing any part of the project, confirm the license policy with the maintainer.
+> **License note:** Original SkyForged source code and documentation are under the [MIT License](LICENSE). Some bundled images and data have unverified provenance and must not be assumed MIT-licensed. See [third-party notices](THIRD_PARTY_NOTICES.md) before packaging or redistributing the full site.
 
 ## Contribution areas
 

@@ -57,7 +57,7 @@ The CI workflow runs both link and JavaScript syntax checks.
 
 ## Deployment
 
-Any static host capable of serving `.html`, `.css`, `.js` and image files can serve SkyForged. The project includes `wrangler.jsonc` for a Cloudflare-style asset deployment. The prior README mentioned a GitHub Pages link, but it was **not verified** in this review. Do not assume a particular hosting URL is active from the configuration file alone.
+Any static host capable of serving `.html`, `.css`, `.js` and image files can serve SkyForged. The project includes `wrangler.jsonc` for a Cloudflare-style asset deployment. The repository homepage is configured as `https://skyforged.saitanveesh.workers.dev/`. **Availability has not been independently verified from this environment**; use the local instructions above if that endpoint is inaccessible. A previously referenced GitHub Pages URL is not the current configured homepage.
 
 ## Data and operational limits
 
