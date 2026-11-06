@@ -8,8 +8,10 @@ This roadmap prioritizes credibility, reliability and practical usability over e
 - [x] Build planning, RF calculation, reference and educational map modules
 - [x] Public quick-start and contribution documentation
 - [x] CI for source syntax and local resource checks
-- [ ] **Choose and publish a source license** after reviewing third-party asset and dataset rights
-- [ ] Confirm a stable public deployment URL and add it to the repository About field and README
+- [x] Publish MIT license for original source code and documentation; document third-party licensing boundaries
+- [ ] Finish the per-asset provenance and third-party dataset redistribution rights audit
+- [x] Document the Cloudflare URL already configured in the GitHub repository About field
+- [ ] Verify the configured public endpoint actually serves the current site and add a health/deployment check
 
 ## Engineering data quality
 

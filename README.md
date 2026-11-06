@@ -12,7 +12,7 @@
 <img src="https://img.shields.io/badge/HTML-CSS%20%2B%20JavaScript-2396df?style=flat-square" alt="HTML, CSS, JavaScript">
 <img src="https://img.shields.io/badge/backend-none-16a085?style=flat-square" alt="No application backend">
 <img src="https://img.shields.io/badge/deployment-static%20site-7289da?style=flat-square" alt="Static-site deployment">
-<img src="https://img.shields.io/badge/license-not%20yet%20specified-f3b64c?style=flat-square" alt="No project license published yet">
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT%20(original%20code)-2cba82?style=flat-square" alt="MIT license for original code and documentation"></a>
 </p>
 
 <p align="center"><strong>Learn the system. Plan the build. Check your assumptions.</strong></p>
@@ -20,6 +20,8 @@
 **SkyForged** is a browser-based UAV engineering workspace that puts learning resources, hardware planning, RF calculators and field checklists in one place. It is intended for students, makers and engineers who want to understand how drone subsystems fit together before working on a real aircraft.
 
 No user account or application server is required. Most tools run directly in the browser. Some modules need an internet connection for third-party map tiles or libraries.
+
+**Project website (configured in GitHub):** https://skyforged.saitanveesh.workers.dev/ — this endpoint's live availability could not be verified from the current environment. If it is inaccessible, use the local instructions below.
 
 > [!IMPORTANT]
 > **Engineering reference, not flight approval.** Component data, compatibility checks, RF range estimates, and educational airport-distance overlays may be incomplete or inaccurate. **The airspace page is not an official DGCA map** and must not be used to authorize a flight. Use manufacturer documentation and current official aviation information for real operations.
@@ -68,7 +70,7 @@ Open **http://127.0.0.1:8000/**. Use `python3` instead of `python` on systems wh
 
 The repository name is **`Sky-Frodged`** (historical spelling); the application name shown in the UI is **SkyForged**. Do not use the `skyforged` Git URL unless the repository itself has been renamed.
 
-The earlier README cited a GitHub Pages URL, but **the deployed URL could not be verified during this documentation update**. Local serving is the supported onboarding path for now. See [development instructions](docs/DEVELOPMENT.md).
+The GitHub repository's configured homepage is **https://skyforged.saitanveesh.workers.dev/**, replacing an older, unverified GitHub Pages link in earlier documentation. This review could not confirm the Cloudflare endpoint responds successfully; the local server workflow above is the reliable documented alternative. See [development instructions](docs/DEVELOPMENT.md).
 
 ## How it works
 
@@ -119,7 +121,7 @@ Sky-Frodged/
 
 Bug reports, verified component corrections, engineering-calculator tests, accessibility improvements and documentation changes are valuable. Read [CONTRIBUTING.md](CONTRIBUTING.md) for a focused workflow and [SECURITY.md](SECURITY.md) for responsible reporting.
 
-This repository currently has **no top-level source license**. Public visibility does not automatically grant reuse, redistribution or modification rights. The maintainer needs to choose and publish a license before contributors can confidently redistribute the software. Third-party images, libraries and datasets can carry separate terms.
+**Original SkyForged code and documentation** are offered under the [MIT License](LICENSE). Third-party libraries and map data retain their licenses; rights to some bundled image assets and component records have not been established. See [third-party licensing and provenance notices](THIRD_PARTY_NOTICES.md) before redistributing the complete site.
 
 ---
 
