@@ -41,7 +41,7 @@ function initMap() {
       fillOpacity: 0.2,
       weight: 1,
       radius: 5000 
-    }).addTo(airspaceMap).bindPopup(`<b>${ap.name}</b><br>RED ZONE: 5km Prohibited`);
+    }).addTo(airspaceMap).bindPopup(`<b>${ap.name}</b><br>Example 5 km buffer — not a legal zone`);
 
     // Yellow Zone (12km)
     L.circle([ap.lat, ap.lon], {
@@ -50,7 +50,7 @@ function initMap() {
       fillOpacity: 0.05,
       weight: 1,
       radius: 12000
-    }).addTo(airspaceMap).bindPopup(`<b>${ap.name}</b><br>YELLOW ZONE: Restricted`);
+    }).addTo(airspaceMap).bindPopup(`<b>${ap.name}</b><br>Example 12 km buffer — not a legal zone`);
   });
 
   // Map Click Listener
@@ -61,9 +61,9 @@ function initMap() {
 
 function updateZoneInfo(lat, lon) {
   const statusBox = document.getElementById('zoneStatus');
-  let zone = 'GREEN';
+  let zone = 'OUTSIDE EXAMPLE BUFFERS';
   let zoneClass = 'zone-green';
-  let message = 'GREEN ZONE: Nano and Micro drones can fly up to 400ft (120m) without prior permission. Flight notification on Digital Sky is still required.';
+  let message = 'Outside the simplified teaching buffers around the listed airports. This is NOT confirmation that a location is a permitted flight zone. Check official airspace data and current restrictions.';
   let nearestAP = null;
   let minDist = Infinity;
 
@@ -77,13 +77,13 @@ function updateZoneInfo(lat, lon) {
   });
 
   if (minDist <= 5) {
-    zone = 'RED (PROHIBITED)';
+    zone = 'WITHIN 5 KM EXAMPLE BUFFER';
     zoneClass = 'zone-red';
-    message = `<strong>NO-FLY ZONE:</strong> You are within 5km of ${nearestAP.name}. Takeoff is prohibited by DGCA Drone Rules 2021.`;
+    message = `<strong>Illustrative proximity:</strong> Within 5 km of ${nearestAP.name} in this educational model. This cannot determine legal status or flight authorization.`;
   } else if (minDist <= 12) {
-    zone = 'YELLOW (RESTRICTED)';
+    zone = 'WITHIN 12 KM EXAMPLE BUFFER';
     zoneClass = 'zone-yellow';
-    message = `<strong>RESTRICTED:</strong> You are within 12km of ${nearestAP.name}. Permission from ATC and Digital Sky is mandatory before takeoff.`;
+    message = `<strong>Illustrative proximity:</strong> Within 12 km of ${nearestAP.name} in this educational model. Real restrictions must be verified independently on official sources.`;
   }
 
   statusBox.innerHTML = `
@@ -97,7 +97,7 @@ function updateZoneInfo(lat, lon) {
         Lon: ${lon.toFixed(5)}
       </div>
       <div style="margin-bottom:16px; color:var(--text-muted); font-size:0.75rem;">
-        Nearest Airport: ${nearestAP.name} (${minDist.toFixed(2)} km)
+        Nearest listed airport: ${nearestAP.name} (${minDist.toFixed(2)} km)
       </div>
       <p style="font-size:0.8rem; color:var(--text-dim); line-height:1.6; border-top:1px solid var(--border); padding-top:12px;">
         ${message}
