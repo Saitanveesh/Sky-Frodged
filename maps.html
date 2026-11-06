@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkyForged / DGCA Airspace Map — Tactical Digital Sky Reference</title>
-  <meta name="description" content="Interactive DGCA Airspace Map for India. Tactical reference for Red, Yellow, and Green zones. Powered by OpenStreetMap.">
+  <title>SkyForged / Educational Airspace Reference</title>
+  <meta name="description" content="Educational airport-distance overlays for learning only; not a legal DGCA zone map or flight permission.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -69,9 +69,9 @@
   <div id="map"></div>
 
   <div class="map-overlay" id="mapOverlay">
-    <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.2em;margin-bottom:12px;">TACTICAL MISSION PLANNER</div>
-    <h2 style="font-family:var(--font-mono);font-size:1.1rem;margin-bottom:8px;">DGCA Airspace Checker</h2>
-    <p style="font-size:0.85rem;color:var(--text-dim);margin-bottom:20px;line-height:1.5;">Click anywhere on the map to identify India's DGCA Airspace Zones (Red/Yellow/Green) and mission compliance requirements.</p>
+    <div style="font-family:var(--font-mono);font-size:0.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.2em;margin-bottom:12px;">EDUCATIONAL DISTANCE REFERENCE</div>
+    <h2 style="font-family:var(--font-mono);font-size:1.1rem;margin-bottom:8px;">Airport Buffer Explorer</h2>
+    <p style="font-size:0.85rem;color:var(--text-dim);margin-bottom:20px;line-height:1.5;">Click the map to explore illustrative distance buffers around selected airports. These buffers do not represent official DGCA zones or determine flight permission.</p>
     
     <div id="zoneStatus" style="padding-top:16px;border-top:1px solid var(--border);">
       <div style="font-family:var(--font-mono);font-size:0.9rem;color:var(--text-muted);">
@@ -80,7 +80,7 @@
     </div>
 
     <div class="callout" style="margin-top:24px;font-size:0.75rem;">
-      <strong>Note:</strong> Simulated data for educational use. Always verify on the official <a href="https://digitalsky.dgca.gov.in/" target="_blank" style="color:var(--accent);">Digital Sky Portal</a> before flight.
+      <strong>Educational only:</strong> Airport examples are incomplete and buffers are simplified. Do not use this map to plan or authorize a flight. Check the current official <a href="https://digitalsky.dgca.gov.in/" target="_blank" style="color:var(--accent);">Digital Sky Portal</a> before flight.
     </div>
   </div>
 

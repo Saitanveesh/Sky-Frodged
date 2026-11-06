@@ -1,292 +1,126 @@
-# SkyForged
+<p align="center"><img src="docs/assets/skyforged-banner.svg" width="100%" alt="SkyForged — a browser-based UAV engineering workspace with build planning, RF tools and learning resources"></p>
 
-I built SkyForged because, while working with drones, I kept running into the same problem: the information I needed was spread across too many places.
+<p align="center">
+<a href="#quick-start">Get started</a> ·
+<a href="#explore-the-workspace">Explore modules</a> ·
+<a href="docs/FEATURES.md">Feature status</a> ·
+<a href="docs/ROADMAP.md">Roadmap</a> ·
+<a href="CONTRIBUTING.md">Contribute</a>
+</p>
 
-Component specifications were in datasheets and product pages. RF calculations were somewhere else. Flight-controller documentation had another set of information. Build planning usually ended up in spreadsheets, and regulatory information had to be checked separately.
+<p align="center">
+<img src="https://img.shields.io/badge/HTML-CSS%20%2B%20JavaScript-2396df?style=flat-square" alt="HTML, CSS, JavaScript">
+<img src="https://img.shields.io/badge/backend-none-16a085?style=flat-square" alt="No application backend">
+<img src="https://img.shields.io/badge/deployment-static%20site-7289da?style=flat-square" alt="Static-site deployment">
+<img src="https://img.shields.io/badge/license-not%20yet%20specified-f3b64c?style=flat-square" alt="No project license published yet">
+</p>
 
-SkyForged is my attempt to bring the parts I actually use while learning, building and studying UAV systems into one browser-based workspace.
+<p align="center"><strong>Learn the system. Plan the build. Check your assumptions.</strong></p>
 
-**Live site:** https://saitanveesh.github.io/skyforged/
+**SkyForged** is a browser-based UAV engineering workspace that puts learning resources, hardware planning, RF calculators and field checklists in one place. It is intended for students, makers and engineers who want to understand how drone subsystems fit together before working on a real aircraft.
 
----
+No user account or application server is required. Most tools run directly in the browser. Some modules need an internet connection for third-party map tiles or libraries.
 
-## What SkyForged is
+> [!IMPORTANT]
+> **Engineering reference, not flight approval.** Component data, compatibility checks, RF range estimates, and educational airport-distance overlays may be incomplete or inaccurate. **The airspace page is not an official DGCA map** and must not be used to authorize a flight. Use manufacturer documentation and current official aviation information for real operations.
 
-SkyForged is not a flight controller, ground-control station or replacement for manufacturer documentation.
+## Why SkyForged?
 
-It is a collection of tools, notes and interactive references that I use to understand a drone as a complete system rather than as a collection of independent parts.
+Drone engineering questions cut across multiple disciplines: motor/prop compatibility, available electrical power, flight-controller I/O, antennas, link budgets, firmware, and regulations. SkyForged keeps these subjects in a single accessible workspace, showing the assumptions behind engineering choices.
 
-The project currently covers hardware selection, RF links, flight-control concepts, build calculations, tuning, field preparation and UAV communication systems.
+- **One browser workspace** with dedicated pages for learning, RF, build planning and operations.
+- **Local calculation tools** for exploration and comparative estimates.
+- **Component catalogue** with more than 3,800 records (not guaranteed current or verified).
+- **Readable references** explaining how individual UAV subsystems interact.
 
-Everything runs directly in the browser.
+<p align="center">
+<img src="assets/hero_drone.png" width="85%" alt="SkyForged drone-themed hero artwork">
+</p>
 
-No account or backend is required.
+## Explore the workspace
 
----
+| Module | What you can do |
+|---|---|
+| [Academy](academy.html) | Follow a beginner learning path and reference drone terminology |
+| [Anatomy](anatomy.html) | Inspect an interactive FPV-component breakdown |
+| [Blueprint](blueprint.html) | Explore thrust-to-weight, battery, propulsion and sizing relationships |
+| [Model Builder](builder.html) | Select parts and review heuristic compatibility checks and estimates |
+| [RF Tools](tools.html) | Calculate link-budget terms, antenna dimensions, Fresnel clearance and more |
+| [PID Tuning](pid.html) | Connect tuning concepts with possible flight behavior and hardware problems |
+| [Handbook](handbook.html) | Read UAV integration, links, firmware and field reference notes |
+| [Platforms](platforms.html) | Browse a developing platform reference dataset |
+| [Airspace Reference](maps.html) | Explore **illustrative** airport-distance buffers; **not official airspace data** |
+| [Operations](ops.html) | Use preparation checklists and estimation utilities |
 
-## Why I made it
+View the [feature matrix and limitations](docs/FEATURES.md) before treating any output as engineering evidence.
 
-When I started working more seriously with UAV hardware and UAV security, I realised that understanding individual components was not enough.
+## Quick start
 
-A motor may be perfectly fine on its own but still be a poor choice for a particular battery and propeller.
-
-A telemetry radio may work correctly but still have a weak link budget because of antenna placement or terrain.
-
-A flight controller may have enough processing power but not enough UARTs for the GPS, receiver, telemetry radio, VTX and other peripherals I want to connect.
-
-The useful questions are usually about how the parts interact.
-
-That is the idea behind SkyForged.
-
-Instead of only listing specifications, I wanted a place where I could learn the theory, do the calculations and then use that information while planning a real system.
-
----
-
-## What is inside
-
-### Academy
-
-A starting point for someone who is still learning how drone systems fit together.
-
-It covers terminology, hardware, electronics, radios, firmware and basic flight concepts in a sequence instead of assuming that the reader already knows the vocabulary.
-
-### Anatomy
-
-An interactive exploded view of an FPV drone.
-
-The purpose is simple: identify each major component, understand where it sits in the aircraft and understand what job it performs.
-
-### Blueprint
-
-This is the part I use before selecting hardware.
-
-It explains the calculations and reasoning behind choices such as:
-
-* thrust-to-weight ratio
-* motor KV and battery voltage
-* propeller selection
-* ESC requirements
-* battery sizing
-* current and power requirements
-* hardware constraints
-
-The goal is to calculate first and buy later.
-
-### Model Builder
-
-The Builder lets me assemble a possible UAV configuration from the component dataset and check some of the relationships between the selected parts.
-
-Current checks include things such as mounting compatibility, voltage limits, propeller/frame size, UART requirements and estimated aircraft weight.
-
-It also calculates a basic build summary including component count, estimated weight and estimated cost.
-
-The component dataset currently contains more than 3,800 records across different UAV hardware categories.
-
-The database is still being cleaned and expanded, so it should be treated as a planning dataset rather than an authoritative product catalogue.
-
-### RF Tools
-
-A set of small calculators for the RF side of a drone system.
-
-Current tools include calculations for:
-
-* FPV channel planning
-* harmonics
-* radio link budgets
-* estimated range
-* Fresnel zones
-* antenna element length
-* frequency lookup
-* VTX configuration
-* other radio-related checks
-
-I added these because RF problems are easy to underestimate until a drone is actually in the air.
-
-### PID and Tuning
-
-This section is meant to connect flight behaviour with possible mechanical, filtering and controller problems.
-
-Instead of presenting PID values as magic numbers, I wanted to show the relationship between the aircraft, vibration, filters and controller response.
-
-### Drone Integration Handbook
-
-The Handbook contains the longer technical notes behind the project.
-
-Topics currently include:
-
-* RC links
-* telemetry and command links
-* video links
-* RF fundamentals
-* antennas
-* link budgets
-* Betaflight
-* iNav
-* ArduPilot
-* PX4
-* MSP
-* MAVLink
-* UART planning
-* pre-flight checks
-* Blackbox logs
-* PID tuning
-* companion computers
-* mesh communication
-* system integration
-
-My main interest here is the point where embedded systems, communication networks and UAV security start overlapping.
-
-### Platform Reference
-
-A small reference section for studying different commercial, Indian and specialised UAV platforms.
-
-This part is still being expanded. I would rather keep a smaller dataset that I can verify than claim hundreds of platforms without reliable specifications.
-
-### Airspace Reference
-
-SkyForged also contains an experimental map for understanding the idea of red, yellow and green operating zones.
-
-The current map uses simplified airport-distance calculations for educational purposes. It is **not an official DGCA airspace map and must not be used as flight authorisation**.
-
-For an actual flight in India, the current official DGCA/Digital Sky information should always be checked independently.
-
-### Operations
-
-The operations section collects calculations, checklists and field references that are more useful when preparing or testing an aircraft than when studying the theory.
-
----
-
-## How it is built
-
-I deliberately kept the project technically simple.
-
-The main application uses:
-
-* HTML
-* CSS
-* JavaScript
-* Leaflet for interactive maps
-* GitHub Pages for deployment
-
-There is no application server and no user database.
-
-Most of the calculations happen locally in the browser.
-
-The project structure is roughly:
-
-```text
-skyforged/
-│
-├── index.html
-├── academy.html
-├── anatomy.html
-├── blueprint.html
-├── builder.html
-├── handbook.html
-├── maps.html
-├── ops.html
-├── pid.html
-├── platforms.html
-├── tools.html
-│
-├── css/
-│
-├── js/
-│   ├── database.js
-│   ├── builder.js
-│   ├── tools.js
-│   ├── maps.js
-│   ├── platforms.js
-│   └── ...
-│
-└── assets/
-```
-
----
-
-## Running it locally
-
-Clone the repository:
+All you need for a local copy is a browser, Git and optionally Python 3 (for a local static HTTP server).
 
 ```bash
-git clone https://github.com/Saitanveesh/skyforged.git
-cd skyforged
-```
-
-You can then serve it using any simple local HTTP server.
-
-For example, with Python:
-
-```bash
+git clone https://github.com/Saitanveesh/Sky-Frodged.git
+cd Sky-Frodged
 python -m http.server 8000
 ```
 
-Open:
+Open **http://127.0.0.1:8000/**. Use `python3` instead of `python` on systems where needed.
+
+The repository name is **`Sky-Frodged`** (historical spelling); the application name shown in the UI is **SkyForged**. Do not use the `skyforged` Git URL unless the repository itself has been renamed.
+
+The earlier README cited a GitHub Pages URL, but **the deployed URL could not be verified during this documentation update**. Local serving is the supported onboarding path for now. See [development instructions](docs/DEVELOPMENT.md).
+
+## How it works
 
 ```text
-http://localhost:8000
+SkyForged (static browser site)
+  ├── HTML pages            learning, planning, tools and references
+  ├── css/style.css         shared styling
+  ├── js/*.js               calculators, interactive features and data views
+  ├── js/database.js        local component records
+  └── assets/               page artwork and illustrations
+
+External resources (where used)
+  ├── Leaflet via CDN
+  └── OpenStreetMap tiles
 ```
 
----
+There is **no application backend, shared account system, or live flight-controller link** in this repository. The site is a planning/reference tool, not a command-and-control platform.
 
-## Current status
+## Reliability and limitations
 
-SkyForged is a work in progress.
+SkyForged is evolving, and its scope should remain explicit:
 
-Some parts are already useful to me, while others are still experimental.
+- **Hardware data:** records and prices may be stale or incomplete; always validate against manufacturer datasheets.
+- **Build checker:** heuristic checks do not establish flightworthiness or electrical safety.
+- **RF tools:** free-space and simplified link models are not measured coverage predictions; terrain, interference, antennas and regulations matter.
+- **Airspace:** the map plots simplified distance buffers around a small list of airports. **It is not a current or complete depiction of Indian controlled/restricted airspace.**
+- **Platform references:** certification and specs require up-to-date external verification.
 
-In particular:
+See [scope and status](docs/FEATURES.md) and [improvement priorities](docs/ROADMAP.md).
 
-* component specifications and prices can change
-* some component records still need manual verification
-* compatibility checks are not a substitute for manufacturer documentation
-* calculated RF range is theoretical and real environments can behave very differently
-* the platform database is still small
-* the airspace map is an educational reference, not an official flight-planning source
+## Project structure
 
-I am keeping these limitations visible because I want the project to become more accurate over time rather than appear more complete than it actually is.
+```text
+Sky-Frodged/
+├── index.html                 landing page
+├── academy.html / anatomy.html
+├── blueprint.html / builder.html
+├── tools.html / pid.html / handbook.html
+├── platforms.html / maps.html / ops.html
+├── css/                       styling
+├── js/                        page logic and component dataset
+├── assets/                    artwork and illustrations
+├── docs/                      development, feature scope, roadmap
+└── wrangler.jsonc             optional Cloudflare Workers assets configuration
+```
 
----
+## Contributing
 
-## Where I want to take it
+Bug reports, verified component corrections, engineering-calculator tests, accessibility improvements and documentation changes are valuable. Read [CONTRIBUTING.md](CONTRIBUTING.md) for a focused workflow and [SECURITY.md](SECURITY.md) for responsible reporting.
 
-The next step is not simply adding more pages.
-
-I want to improve the quality of the underlying engineering data.
-
-That includes:
-
-* verifying component specifications against manufacturer sources
-* improving electrical and mechanical compatibility checks
-* adding better propulsion calculations
-* connecting motor, propeller and battery data
-* improving RF modelling
-* expanding verified UAV platform information
-* adding more real build examples
-* documenting actual test results
-* improving the UAV security and communication sections
-* separating calculated values from measured values
-
-Eventually I want SkyForged to become a practical reference that I can use alongside my own UAV builds and research.
+This repository currently has **no top-level source license**. Public visibility does not automatically grant reuse, redistribution or modification rights. The maintainer needs to choose and publish a license before contributors can confidently redistribute the software. Third-party images, libraries and datasets can carry separate terms.
 
 ---
 
-## About me
-
-I am Sai Tanveesh.
-
-My main area of interest is cybersecurity, with a growing focus on UAV systems, embedded hardware and communication security.
-
-A large part of my work involves understanding what happens between the different layers of a drone: the flight controller, sensors, radio links, telemetry, companion computers and ground station.
-
-SkyForged grew out of that work.
-
-Rather than keeping my calculations, notes and references scattered across different folders, I started putting them into one system.
-
-This repository is that system.
-
----
-
-**Built and maintained by Sai Tanveesh**
-
-GitHub: https://github.com/Saitanveesh
+<p align="center"><sub>SkyForged — an engineering workspace for learning and planning, not a substitute for manufacturer validation or official flight authorization.</sub></p>
